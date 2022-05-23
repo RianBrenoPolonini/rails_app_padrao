@@ -13,7 +13,7 @@ services:
     build:
       context: .
       dockerfile: app.Dockerfile
-    command: bash -c "bundle exec puma -C config/puma.rb"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
     volumes:
       - .:/app
     depends_on:
